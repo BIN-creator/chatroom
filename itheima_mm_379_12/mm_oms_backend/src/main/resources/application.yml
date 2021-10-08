@@ -1,0 +1,24 @@
+#db配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1/contact?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:com/itheima/mm/mapper/*.xml  #指定mappper的位置
+  type-aliases-package: com.itheima.mm.pojo
+mybatis-plus: # 控制台打印执行日志
+  type-aliases-package: com.itheima.mm.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  file: log/mm.log
+  path: log
+  level:
+    com.itheima.mm: DEBUG
+debug: true
+server:
+  servlet:
+    context-path: /mm  #访问路径从/mm开始
+  port: 8080
